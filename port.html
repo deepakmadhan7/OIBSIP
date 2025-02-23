@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Deepak M - Portfolio</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- <link rel="stylesheet" href="D:\portfolio\click-tap-image\dist\css\image-zoom.css" />
+        <script src="D:/portfolio/click-tap-image/js/vendor/jquery.min.js"></script>
+        <script src="D:/portfolio/click-tap-image/dist/js/image-zoom.min.js"></script> -->
+
+    </head>
+ 
+    <body>
+
+        
+        <header>
+            <div class="user">
+                <img src="images/deepak.jpeg" alt="Deepak M">
+                <h3 class="name">Deepak M</h3>
+                <p class="post">Web Developer and designer</p>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#certificates">certificates</a></li>
+                    <li><a href='project.html'>internships</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--HOME SECTION STARTS-->
+
+        <section class="home" id="home">
+
+
+            <h3>HI THERE</h3>
+            <h1>I'M <span>Deepak M</span></h1>
+            <p>An independent and self-motivated student who creates user-friendly and 
+                efficient websites and apps that are visually appealing and easy to navigate.</p>
+    
+            <a href="#about"><button class="btn">About me <i class="fas fa-user"></i></button></a>
+    
+        </section>
+
+        <!--HOME SECTION ENDS-->
+
+        <!--ABOUT SECTION STARTS-->
+
+        <section class="about" id="about">
+            <h1 class="heading"><span>About</span> Me</h1>
+            <div class="row">
+    
+                <div class="info">
+                    
+                    <h3><span>Name : </span>Deepak M</h3>
+                    <h3><span>Age : </span>19</h3>
+                    <h3><span>Degree : </span>B.E</h3>
+                    <h3><span>Branch : </span>Mechanical engineering</h3>
+                    <h3><span>Graduation Year : </span>2027</h3>
+                    <a href="images/resume.pdf" download><button class="btn">Download Resume <i class="fas fa-download"></i></button></a>
+                </div>
+    
+                <div  class="counter" >
+                    <div class="box" onclick="window.location.href = 'project.html'">
+                        <span>1</span>
+                        <h3>Internships Completed</h3>
+                    </div>
+    
+                    <div class="box">
+                        <span>10</span>
+                        <h3>Certifications</h3>
+                    </div>
+
+                </div>
+    
+            </div>
+    
+    
+        </section>
+
+        <!--ABOUT SECTION ENDS-->
+
+        <!--PORTFOLIO SECTION STARTS-->
+
+        <section class="portfolio" id="portfolio">
+            <h1 class="heading">My <span>Portfolio</span></h1>
+    
+            <div class="port-container">
+                <div class="port-item">
+                    <img src="images/html.png" alt="" id="image"  />
+                </div>
+    
+                <div class="port-item">
+                    <img src="images/css.png" alt="" id="image">
+                </div>
+    
+                <div class="port-item">
+                    <img src="images/js.png" alt="" id="image">
+                </div>
+    
+                <div class="port-item">
+                    <img src="images/python.png" alt="" id="image">
+                </div>
+    
+                <div class="port-item">
+                    <img src="images/c.png" alt="" id="image">
+                </div>
+    
+                <div class="port-item">
+                    <img src="images/mango.png" alt="" id="image">
+                </div>
+
+            </div>
+    
+        </section>
+
+        <!--PORTFOLIO SECTION ENDS-->
+
+        <!-- ACHIEVEMENTS SECTION STARTS -->
+
+
+        <section class="certificates" id="certificates">
+            <h1 class="heading">My <span>certificates</span></h1>
+            <div class="gallery-wrap">
+                <img src="images/leftarrow.png" alt="" id="backBtn" width="50" height="50">
+
+                <div class="gallery">
+
+                    
+                        <!-- <img src="cer/nest-letter.jpg" alt="" class="lor" id="acheivements_img" /> -->
+                        <img src="images/guvi.png" alt="" id="acheivements_img" />
+                        <img src="images/bf.jpeg" alt="" id="acheivements_img" />
+                    
+                    
+                        <img src="images/cssc.png" alt="" id="acheivements_img" />
+                        <img src="images/jsc.png" alt="" id="acheivements_img" />
+                        
+                    
+    
+                </div>
+
+                <img src="images/right.png" alt="" id="nextBtn" width="50" height="50">
+
+            </div>
+
+            <div class="popup-image">
+
+                    <span>&times;</span>
+                <img src="images/guvi.png" alt="">
+
+            </div>
+            
+            <script>
+                let scrollContainer = document.querySelector(".gallery");
+                let backBtn = document.getElementById("backBtn");
+                let nextBtn = document.getElementById("nextBtn");
+                scrollContainer.addEventListener("wheel", (evt) => {
+                    evt.preventDefault();
+                    scrollContainer.scrollLeft += evt.deltaY
+                    scrollContainer.style.scrollBehavior = "smooth";
+                });
+
+                nextBtn.addEventListener("click", ()=>{
+                    scrollContainer.style.scrollBehavior = "smooth";
+                    scrollContainer.scrollLeft += 900;
+                });
+                backBtn.addEventListener("click", ()=>{
+                    scrollContainer.style.scrollBehavior = "smooth";
+                    scrollContainer.scrollLeft -= 900;
+                });
+
+                function zoomIn() {
+                    var pic = document.getElementById("zoom");
+                    var width = pic.clientWidth;
+                    pic.style.width = width + 100 + "px";
+                }
+
+
+            </script>
+
+            <!-- <script>
+                document.querySelectorAll('.gallery img').forEach(image =>{
+                    image.onclick = () =>{
+                        document.querySelector('.popup-image').style.display='block';
+                        document.querySelector('.popup-image img').src = image.getAttribute('src');
+
+                    }
+
+                    
+                });
+
+                document.querySelector('.popup-image span').onclick = () =>{
+                    document.querySelector('.popup-image').style.display='none';
+                }
+
+            </script> -->
+            
+            
+
+        </section>
+
+
+        <!-- ACHIEVEMENTS SECTION ENDS -->
+
+        <!--CONTACT SECTION STARTS-->
+        <section class="contact" id="contact">
+
+            <h1 class="heading"><span>Contact</span> Me</h1>
+        <div class="row">
+            <div class="content">
+                <h3 class="title">Contact Info</h3>
+                <div class="info">
+                    <!-- <h3 ><a href="mailto:deepakmadhan98@gmail.com"><i class="fas fa-envelope">deepakmadhan98@gmail.com</i></a></h3>
+                    <h3><a href="tel: +917401220642"><i class="fas fa-phone"> +917401220642</i></a></h3> -->
+                    <div class="icon">
+                        <h3><a href="mailto:deepakmadhan98@gmail.com"><i class="fas fa-envelope"></i></a></h3>
+                        <h3><a href="https://api.whatsapp.com/send?phone=7401220642"><i class="fab fa-whatsapp"></i></a></h3>
+                        <h3><a href="https://www.instagram.com/deepak_madhan7/"><i class="fab fa-instagram"></i></a></h3>
+                        <h3><a href="https://www.linkedin.com/in/deepak-m-2a72472a2/"><i class="fab fa-linkedin"></i></a></h3>
+                        <h3><a href="https://github.com/deepakmadhan7"><i class="fab fa-github"></i></a></h3>
+                    
+                    </div>
+                </div>
+            </div>
+    
+            <form  action="https://formspree.io/f/xwkjazpk" method="POST">
+                <input type="text" placeholder="name" id="name" name="name" class="box" required>
+                <input type="email" placeholder="email" id="mail" name="email" class="box" required>
+                <input type="text" placeholder="phone number" id="phone" name="email" class="box">
+                <textarea  id="message" cols="30" rows="10" class="box message"  name="message" placeholder="message" required></textarea>
+                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    
+        </section>
+
+        <!--CONTACT SECTION ENDS-->
+
+        <!--SCROLL TOP-->
+        
+        <a href="#home" class="top">
+            <img src="images/scroll-up.jpeg" width="50" height="50" alt="">
+        </a>
+
+        <div id="menu" class="fas fa-bars"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
